@@ -50,7 +50,7 @@ function generatePassword() {
     var specLowerC = confirm("Do you want to include lower case letters?");
     console.log(specLowerC) 
     if (specLowerC === true) {
-        characterChoice += lowerCase; 
+        characterChoice =+ lowerCase; 
     }  
     console.log("specLowerC =",specLowerC);
     specUpperC = confirm("Do you want to include upper case letters?");
