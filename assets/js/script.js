@@ -53,7 +53,7 @@ function generatePassword() {
         characterChoice =+ lowerCase; 
     }  
     console.log("specLowerC =",specLowerC);
-    specUpperC = confirm("Do you want to include upper case letters?");
+    specUpperC === confirm("Do you want to include upper case letters?");
     
     if (specUpperC === true) {
         characterChoice += upperCase;
@@ -62,13 +62,14 @@ function generatePassword() {
     specNumber = confirm("Do you want to include numbers?")
     specExtraS = confirm("Do you want to include extra symbles?");
     console.log("specNumber =", specNumber, "specExtraS =", specExtraS );
-    if (characterChoice.length === "") {
+    if (characterChoice.length === 0 ) {
         alert("You haven't met the password criteria. \n Try Again")
         return;
     }
     //    3.display password to the page
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
+    var passkey = " " ;
+    var reandomindex = 0;
+    console.log("characterChoice length is", characterChoice.length)
     for (var i = 0; i < passLength; i++  )  {
         passkey += characterChoice[Math.floor(Math.random() * characterChoice.length)]
         console.log("passkey", passkey);
@@ -79,8 +80,8 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-  generatePassword();
-  querySelector("#password");
+  var password = generatePassword();
+   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
